@@ -10,6 +10,7 @@ library('cronR')
 gmail_key='YOUR_KEY'
 gmail_secret='YOUR_SECRET'
 working_dir = getwd()
+default_img = 'YOUR-DEFAULT-IMAGE-URL'
 
 #Gmail API OAuth 
 gm_auth_configure(gmail_key,gmail_secret)
@@ -32,6 +33,30 @@ mail_url <- gsub("Url: ","",mail_url)
 mail_title <- gsub('Title: ',"",mail[[1]][2])
 mail_img <- gsub(' <.*>',"",mail[[1]][3])
 mail_img <- gsub("Img: ","",mail_img)
+mail_img  <- gsub(' <.*>',"",a[[1]][3])
+mail_img  <- gsub("Img: ","",mail_img )
+
+check_object <- function(x){
+  x = x
+  img_url = paste0('Img: ',default_img)
+  if(x == 'Img:'){ 
+    str_replace(x,x[1],img_url)
+  }else{
+    if(x == 'Img'){ 
+      str_replace(x,x[1],img_url)
+    }
+    if(x == 'null'){ 
+      str_replace(x,x[1],img_url)
+    }
+    if(x == ''){ 
+      str_replace(x,x[1],img_url)
+    }else{
+      x
+    }
+  }
+}
+mail_img  =check_object(mail_img)
+
 mail_desc <- gsub("Description: ","",mail[[1]][4])
 mail_stat <- gsub("Status: ","",mail[[1]][5])
 
