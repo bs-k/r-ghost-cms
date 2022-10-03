@@ -24,7 +24,7 @@ Publish posts on your [Ghost CMS](https://ghost.org) powered blog by sending mes
 3. Configure both files
 4. Run CronR (see main.R details)
 5. Edit crontab as below (scheduled .py job every minute):
-> * */1 * * * * /usr/bin/python3 "/YOUR-WORKING-DIRECTORY/ghost-api.py" ; rm /YOUR-WORKING-DIRECTORY/json.json > /YOUR-WORKING-DIRECTORY/cron.log
+> */1 * * * * /usr/bin/python3 "/YOUR-WORKING-DIRECTORY/ghost-api.py" ; rm /YOUR-WORKING-DIRECTORY/json.json > /YOUR-WORKING-DIRECTORY/cron.log
 
 # JUST BLOG!
 
