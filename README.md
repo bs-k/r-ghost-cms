@@ -28,4 +28,4 @@ Status: published
 
 # JUST BLOG!
 
-If you configured everything properly, every post with the correct structure will be posted to your Ghost CMS page automatically. Enjoy!
+If you configured everything properly, every post with the correct structure sent to your Gmail account will be posted to your Ghost CMS page automatically. Enjoy!
