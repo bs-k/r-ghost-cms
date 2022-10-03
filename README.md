@@ -11,11 +11,11 @@ Publish posts on your [Ghost CMS](https://ghost.org) powered blog by sending mes
 
 # EMAIL STRUCTURE (BODY / EMAIL TEXT) - SAMPLE
 
-Url: https://samplesite.com/sample-news;
-Title: Sample post title;
-Img: https://samplesite.com/sample.img;
-Description: sample description placed in your posts body;
-Status: published
+> Url: https://samplesite.com/sample-news;
+> Title: Sample post title;
+> Img: https://samplesite.com/sample.img;
+> Description: sample description placed in your posts body;
+> Status: published
 
 # HOW TO BLOG
 
