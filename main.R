@@ -5,6 +5,7 @@ library('shiny')
 library('shinyFiles')
 library('gmailr')
 library('cronR')
+library('stringr')
 
 #define main objects
 gmail_key='YOUR_KEY'
