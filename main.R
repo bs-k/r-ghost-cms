@@ -39,23 +39,22 @@ mail_img  <- gsub("Img: ","",mail_img )
 
 check_object <- function(x){
   x = x
-  img_url = paste0('Img: ',default_img)
+  img_url = default_img
   if(x == 'Img:'){ 
     str_replace(x,x[1],img_url)
   }else{
     if(x == 'Img'){ 
       str_replace(x,x[1],img_url)
     }
-    if(x == 'null'){ 
-      str_replace(x,x[1],img_url)
+    if(x == 'default'){ 
+      x[1] = img_url
     }
-    if(x == ''){ 
-      str_replace(x,x[1],img_url)
-    }else{
+    else{
       x
     }
   }
 }
+
 mail_img  =check_object(mail_img)
 
 mail_desc <- gsub("Description: ","",mail[[1]][4])
