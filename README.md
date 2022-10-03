@@ -17,7 +17,7 @@ Publish posts on your [Ghost CMS](https://ghost.org) powered blog by sending mes
 > Description: sample description placed in your posts body; <br/>
 > Status: published <br/>
 
-# HOW TO BLOG
+# HOW TO
 
 1. Create new directory on your Nginx server
 2. Place both files in it (ghost-api.py & main.R)
