@@ -1,4 +1,4 @@
-# GHOST-R-CMS
+# R-GHOST-CMS
 
 Publish posts on your [Ghost CMS](https://ghost.org) powered blog by sending messages via Gmail.
 
