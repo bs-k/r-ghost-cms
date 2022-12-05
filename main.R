@@ -64,6 +64,9 @@ mail_stat <- gsub("Status: ","",mail[[1]][5])
 html = paste0("<p><b>Link:</b> <a href='",mail_url,"'>Jump to source</a></p><p>",mail_desc,"</p>")
 html <- toString(html)
 json <- paste0('{"posts":[{"title":"',mail_title,'","status":"',mail_stat,'","html":"',html,'","feature_image":"',mail_img,'","custom_template":"custom-narrow-feature-image"}]}')
+
+
+
 #--delete previous file
 file.remove(paste0(working_dir,'/json.json'))
 #--create new file
@@ -71,5 +74,12 @@ fileConn<-file(paste0(working_dir,'/json.json'))
 writeLines(json, fileConn)
 close(fileConn)
 
-#create crontab schedule for this .R script using CronR - line 49 should be #### after CronR configuration
+#--backup json with current date
+st=format(Sys.time(), "%Y-%m-%d_%H:%M")
+backup_dir <- paste0(working_dir,'/json-archive/json_',st,'.json')
+fileConn2 <- file(backup_dir)
+writeLines(json, fileConn2)
+close(fileConn2)
+
+#create crontab schedule for this .R script using CronR - line 85 should be #### after CronR configuration
 cronR::cron_rstudioaddin()
